@@ -7,7 +7,7 @@ function postComments(state = [], action) {
         user: action.author,
         text: action.comment
       }];
-    
+
     case 'REMOVE_COMMENT':
       // need to return state without deleted comment
       return [

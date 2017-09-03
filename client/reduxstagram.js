@@ -19,6 +19,11 @@ import { Provider } from 'react-redux'; // bindings that allow redux usage with 
 // whereas history is a named export (const history)
 import store, { history } from './store';
 
+import Raven from 'raven-js';
+import { sentry_url, logException } from './data/config';
+
+Raven.config(sentry_url).install();
+
 // Provider tag exposes store to our app
 const router = (
   <Provider store={store}>
